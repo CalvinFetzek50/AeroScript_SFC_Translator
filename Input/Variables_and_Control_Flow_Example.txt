@@ -1,0 +1,131 @@
+// Variables and Control Flow Example:
+// Demonstrates how to use conditionals and loop constructs in AeroScript
+// to operate on different types of variables, including arrays of variables.
+
+var $intArray[] as integer = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+var $stringArray[] as string = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+
+program
+
+	var $intSum as integer = 0
+	var $combinedString as string
+	var $iteration as integer
+
+	// Note: You can use any type of loop to iterate over an array of any data type.
+	// This example shows various combinations of looping over integer and string arrays.
+
+	// Loop over an integer array using a while loop.
+	$iteration = 0
+	$intSum = 0
+	while ($iteration < length($intArray))
+		$intSum = $intSum + $intArray[$iteration]
+		$iteration++
+	end
+	AppMessageDisplay("While Loop Sum = " + IntegerToString($intSum))
+
+
+	// Loop over a string array using a foreach loop.
+	$combinedString = ""
+	foreach var $string in $stringArray
+		$combinedString = $combinedString + $string
+	end
+	AppMessageDisplay("Foreach Loop String = " + $combinedString)
+
+
+	// Loop over an integer array using a for loop (with default step of 1).
+	$intSum = 0
+	for $iteration = 0 to (length($intArray) - 1)
+		$intSum = $intSum + $intArray[$iteration]
+	end
+	AppMessageDisplay("For Loop Sum = " + IntegerToString($intSum))
+
+
+	// Loop over a string array using a for loop (with custom step of 2).
+	$combinedString = ""
+	for $iteration = 0 to (length($stringArray) - 1) step 2
+		$combinedString = $combinedString + $stringArray[$iteration]
+	end
+	AppMessageDisplay("For Loop String (every other character) = " + $combinedString)
+
+
+	// Repeat the same operation multiple times.
+	$intSum = 1
+	repeat 10
+		$intSum = $intSum * 2
+	end
+	AppMessageDisplay("Repeat Loop 2^10 = " + IntegerToString($intSum))
+
+
+	// Demonstrates calling into a function that uses an if/elseif/else statement.
+	foreach var $string in $stringArray
+		if (IsVowel($string))
+			AppMessageDisplay("Letter \"" + $string + "\" is a vowel.")
+			Dwell(0.100)
+		end
+	end
+
+
+	// Demonstrates calling into a function that uses a switch/case statement.
+	AppMessageDisplay("Month 3 = " + NameOfMonth(3))
+	AppMessageDisplay("Month 9 = " + NameOfMonth(9))
+
+end
+
+
+// Demonstrates using an if/elseif/else conditional.
+function IsVowel($letter as string) as integer
+	var $isVowel
+
+	if (StringEquals($letter, "A"))
+		$isVowel = true
+	elseif (StringEquals($letter, "E"))
+		$isVowel = true
+	elseif (StringEquals($letter, "I"))
+		$isVowel = true
+	elseif (StringEquals($letter, "O"))
+		$isVowel = true
+	elseif (StringEquals($letter, "U"))
+		$isVowel = true
+	else
+		$isVowel = false
+	end
+
+	return $isVowel
+end
+
+
+// Demonstrates using a switch/case conditional.
+function NameOfMonth($monthNumber as integer) as string
+	var $monthName as string
+
+	switch ($monthNumber)
+		case 1
+			$monthName = "January" 
+		case 2
+			$monthName = "February"
+		case 3
+			$monthName = "March"
+		case 4
+			$monthName = "April"
+		case 5
+			$monthName = "May" 
+		case 6
+			$monthName = "June"
+		case 7
+			$monthName = "July"
+		case 8
+			$monthName = "August"  
+		case 9
+			$monthName = "September"   
+		case 10
+			$monthName = "October"
+		case 11
+			$monthName = "November"
+		case 12
+			$monthName = "December"
+		default
+			$monthName = "Invalid Month"
+	end
+
+	return $monthName
+end

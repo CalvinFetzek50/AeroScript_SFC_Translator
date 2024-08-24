@@ -1,0 +1,65 @@
+// Cycle Motion Example:
+// Demonstrates how to program repeated cycles of motion.
+
+program
+
+	var $myAxis as axis
+	var $startPos as real
+	var $numberOfSteps as integer
+	var $endPos as real
+	var $moveSpeed as real
+	var $currentStep as integer
+
+	// Store information about the moves into variables that will
+	// be used below.
+
+	// Axis to command during the moves.
+	$myAxis = X
+
+	// Start position (specified in units).
+	$startPos = -25
+
+	// Number of moves to make in each direction. Must be positive.
+	$numberOfSteps = 5
+
+	// End position (specified in units).
+	$endPos = 25
+
+	// Move speed (specified in units/second).
+	$moveSpeed = 5
+
+	// Enable and home the axis.
+	Enable($myAxis)
+	Home($myAxis)
+
+	// Change the target mode so that move distances are in absolute coordinates.
+	SetupTaskTargetMode(TargetMode.Absolute)
+
+	// Move to the starting position.
+	MoveLinear($myAxis, $startPos, $moveSpeed)
+
+	// Force the motion to wait for 1 second.
+	Dwell(1.0)
+
+	// Step until the end position is reached.
+	for $currentStep = 1 to $numberOfSteps
+		// Make a step move.
+		MoveLinear($myAxis, $startPos + ($currentStep * ($endPos - $startPos) / $numberOfSteps), $moveSpeed)
+
+		// For the motion to wait for 1 second at each location.
+		Dwell(1.0)
+	end
+
+	// Step until the start position is reached.
+	for $currentStep = 1 to $numberOfSteps
+		// Make a step move.
+		MoveLinear($myAxis, $endPos + ($currentStep * ($startPos - $endPos) / $numberOfSteps), $moveSpeed)
+
+		// For the motion to wait for 1 second at each location.
+		Dwell(1.0)
+	end
+	
+	// Disable the axis.
+	Disable($myAxis)
+
+end

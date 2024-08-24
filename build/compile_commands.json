@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/build",
+  "command": "/usr/bin/c++   -g -std=gnu++11 -o CMakeFiles/test-textReader.dir/textReader_tests.cpp.o -c \"/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/textReader_tests.cpp\"",
+  "file": "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/textReader_tests.cpp",
+  "output": "CMakeFiles/test-textReader.dir/textReader_tests.cpp.o"
+},
+{
+  "directory": "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/build",
+  "command": "/usr/bin/c++   -g -std=gnu++11 -o CMakeFiles/test-Step.dir/step_tests.cpp.o -c \"/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/step_tests.cpp\"",
+  "file": "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/step_tests.cpp",
+  "output": "CMakeFiles/test-Step.dir/step_tests.cpp.o"
+},
+{
+  "directory": "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/build",
+  "command": "/usr/bin/c++   -g -std=gnu++11 -o CMakeFiles/test-transition.dir/transition_tests.cpp.o -c \"/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/transition_tests.cpp\"",
+  "file": "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/transition_tests.cpp",
+  "output": "CMakeFiles/test-transition.dir/transition_tests.cpp.o"
+},
+{
+  "directory": "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/build",
+  "command": "/usr/bin/c++   -g -std=gnu++11 -o CMakeFiles/test-network.dir/network_tests.cpp.o -c \"/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/network_tests.cpp\"",
+  "file": "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/network_tests.cpp",
+  "output": "CMakeFiles/test-network.dir/network_tests.cpp.o"
+},
+{
+  "directory": "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/build",
+  "command": "/usr/bin/c++   -g -std=gnu++11 -o CMakeFiles/main-textReader.dir/main.cpp.o -c \"/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/main.cpp\"",
+  "file": "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/main.cpp",
+  "output": "CMakeFiles/main-textReader.dir/main.cpp.o"
+}
+]

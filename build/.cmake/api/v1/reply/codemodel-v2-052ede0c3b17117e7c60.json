@@ -1,0 +1,96 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "AeroScript_SFC_Translator",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "main-textReader::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main-textReader-Debug-62e3ee85929d1db5ccf2.json",
+					"name" : "main-textReader",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test-Step::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Step-Debug-2e827bc93be096cbb7c4.json",
+					"name" : "test-Step",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test-network::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-network-Debug-55707f893019a6268725.json",
+					"name" : "test-network",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test-textReader::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-textReader-Debug-1f2e7133c27f2685f815.json",
+					"name" : "test-textReader",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test-transition::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-transition-Debug-a25d9f6e08b8bda57b98.json",
+					"name" : "test-transition",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator/build",
+		"source" : "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/AeroScript State Machine Programming/AeroScript_SFC_Translator"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

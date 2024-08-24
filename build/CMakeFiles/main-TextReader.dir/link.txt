@@ -1,0 +1,1 @@
+/usr/bin/c++ -g "CMakeFiles/main-textReader.dir/main.cpp.o" -o main-textReader

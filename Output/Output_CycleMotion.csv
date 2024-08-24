@@ -1,0 +1,23 @@
+start
+|
+Step_0,,N,"Enable($myAxis)"
+|,true = 1
+Step_1,,N,"Home($myAxis)"
+|,true = 1
+Step_2,,N,"SetupTaskTargetMode(TargetMode.Absolute)"
+|,true = 1
+Step_3,,N,"MoveLinear($myAxis, $startPos, $moveSpeed)"
+|,$myAxis = -25
+Step_4,,N,"Dwell(1.0)"
+|,true = 1
+Step_5,,N,"for $currentStep = 1 to $numberOfSteps // Make a step move.
+MoveLinear($myAxis, $startPos + ($currentStep * ($endPos - $startPos) / $numberOfSteps), $moveSpeed) // For the motion to wait for 1 second at each location.
+Dwell(1.0) end"
+|,$currentStep = 5
+Step_6,,N,"for $currentStep = 1 to $numberOfSteps // Make a step move.
+MoveLinear($myAxis, $endPos + ($currentStep * ($startPos - $endPos) / $numberOfSteps), $moveSpeed) // For the motion to wait for 1 second at each location.
+Dwell(1.0) end"
+|,$currentStep = 5
+Step_7,,N,"Disable($myAxis)"
+|,true = 1
+end
