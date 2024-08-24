@@ -3,7 +3,7 @@
 #define CATCH_CONFIG_MAIN
 #define CATCH_CONFIG_COLOUR_NONE
 #include "catch.hpp"
-#include "step.hpp"
+#include "./classes/step.hpp"
 
 TEST_CASE("Test get and set Name", "[Step class]"){
 

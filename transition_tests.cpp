@@ -3,7 +3,7 @@
 #define CATCH_CONFIG_MAIN
 #define CATCH_CONFIG_COLOUR_NONE
 #include "catch.hpp"
-#include "transition.hpp"
+#include "./classes/transition.hpp"
 
 TEST_CASE(" Test get and set Step methods", "[Transition class]"){
     
