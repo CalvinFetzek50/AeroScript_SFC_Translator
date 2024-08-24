@@ -5,6 +5,7 @@
 #define CATCH_CONFIG_COLOUR_NONE
 #include "catch.hpp"
 #include "./classes/textReader.hpp"
+#include "./functions/textParser.hpp"
 
 // function prototype
 void getType(AeroScriptType);

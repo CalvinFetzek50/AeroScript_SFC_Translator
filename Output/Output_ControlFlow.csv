@@ -1,0 +1,89 @@
+start
+|
+Step_0,,N,"while ($iteration < length($intArray))"
+|,true = 
+Step_1,,N,"AppMessageDisplay("While Loop Sum = " + IntegerToString($intSum))"
+|,true = 
+Step_2,,N,"foreach var $string in $stringArray"
+|,true = 
+Step_3,,N,"AppMessageDisplay("Foreach Loop String = " + $combinedString)"
+|,true = 
+Step_4,,N,"for $iteration = 0 to (length($intArray) - 1)"
+|,$iteration = 
+Step_5,,N,"AppMessageDisplay("For Loop Sum = " + IntegerToString($intSum))"
+|,true = 
+Step_6,,N,"for $iteration = 0 to (length($stringArray) - 1) step 2"
+|,$iteration = 
+Step_7,,N,"AppMessageDisplay("For Loop String (every other character) = " + $combinedString)"
+|,true = 
+Step_8,,N,"repeat 10"
+|,true = 
+Step_9,,N,"AppMessageDisplay("Repeat Loop 2^10 = " + IntegerToString($intSum))"
+|,true = 
+Step_10,,N,"foreach var $string in $stringArray"
+|,true = 
+Step_11,,N,"if (IsVowel($string))"
+|,true = 
+Step_12,,N,"AppMessageDisplay("Letter \"" + $string + "\" is a vowel.")"
+|,true = 
+Step_13,,N,"AppMessageDisplay("Month 3 = " + NameOfMonth(3))"
+|,true = 
+Step_14,,N,"AppMessageDisplay("Month 9 = " + NameOfMonth(9))"
+|,true = 
+Step_15,,N,"function IsVowel($letter as string) as integer"
+|,true = 
+Step_16,,N,"if (StringEquals($letter, "A"))"
+|,true = 
+Step_17,,N,"$isVowel = true"
+|,true = 
+Step_18,,N,"elseif (StringEquals($letter, "E"))"
+|,true = 
+Step_19,,N,"$isVowel = true"
+|,true = 
+Step_20,,N,"elseif (StringEquals($letter, "I"))"
+|,true = 
+Step_21,,N,"$isVowel = true"
+|,true = 
+Step_22,,N,"elseif (StringEquals($letter, "O"))"
+|,true = 
+Step_23,,N,"$isVowel = true"
+|,true = 
+Step_24,,N,"elseif (StringEquals($letter, "U"))"
+|,true = 
+Step_25,,N,"$isVowel = true"
+|,true = 
+Step_26,,N,"$isVowel = false"
+|,true = 
+Step_27,,N,"return $isVowel"
+|,true = 
+Step_28,,N,"function NameOfMonth($monthNumber as integer) as string"
+|,true = 
+Step_29,,N,"switch ($monthNumber)"
+|,true = 
+Step_30,,N,"case 1"
+|,true = 
+Step_31,,N,"case 2"
+|,true = 
+Step_32,,N,"case 3"
+|,true = 
+Step_33,,N,"case 4"
+|,true = 
+Step_34,,N,"case 5"
+|,true = 
+Step_35,,N,"case 6"
+|,true = 
+Step_36,,N,"case 7"
+|,true = 
+Step_37,,N,"case 8"
+|,true = 
+Step_38,,N,"case 9"
+|,true = 
+Step_39,,N,"case 10"
+|,true = 
+Step_40,,N,"case 11"
+|,true = 
+Step_41,,N,"case 12"
+|,true = 
+Step_42,,N,"return $monthName"
+|,true = 
+end

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string> 
-#include <vector>
 #include <cctype>
 #include <set>
 #include <typeinfo>
@@ -11,117 +10,24 @@
 #include "step.hpp"
 #include "transition.hpp"
 #include "network.hpp"
+#include "Command.hpp"
+
 
 #ifndef TEXTREADER_CPP
 #define TEXTREADER_CPP
 
 
 
-enum AeroScriptType {VAR, IF, COMMENT, DECLARATION ,FUNCTION};
 
-
-struct Command{
-    AeroScriptType commandType;
-    std::string commandString;
-};
 
 // function prototypes
-void combineComments(std::vector<Command>&);
 int nthOccurrence(const std::string&, const std::string&, int);
 
-/** This function parses the AeroScript Source code into blocks of strings based on rows.
- * @param sourceScript : AeroScript source code stored as a single string
- * @return Returns the vector the source code parsed by line and tabs removed */
-std::vector<std::string> rowParser(std::string sourceScript){
 
-    std::vector<std::string> rowsVector;
-    std::string line = "";
 
-    // store each line in a vector of strings
-    for (int i =0; i < sourceScript.length(); i++){
-        if ((sourceScript[i] == '\n') || (sourceScript[i] == '\r')){
-            // reset  string once reaching the end of the line.
-            if (line.length() > 0){
-                rowsVector.push_back(line);
-            }
-            line = "";
-        }else if (sourceScript[i] == '\t'){
-            // ignore tabs 
-        }else{
-            line += sourceScript[i];
-        }
-    }
-    return rowsVector;   
-}
 
-/** this function cassifies the parsed lines into the different types: 
- * variables, comments, conditionals and loops, etc.
- * @pre run rowParser(sourceScript) before running this function.
- * @param rowVector : AeroScript source code stored as a vector of strings corresponding to each row.
- * @return returns a vector of AeroScript constructs. */
-std::vector<Command> rowIdentifier(std::vector<std::string> rowVector){
 
-    std::vector<Command> parsedVector;
 
-    for (int i = 0; i < rowVector.size(); i++){
-        // store string for each row
-        std::string targetString = rowVector[i]; 
-
-        // ignore first spaces
-        int firstLetter = 0;
-        for (char c : targetString){
-            if (std::isspace(c)){
-                firstLetter++;
-            }else{
-                break;
-            }
-        }
-        targetString = targetString.substr(firstLetter,targetString.length()-firstLetter);
-
-        // initialize a AeroScript Command struct for each row
-        Command target; 
-
-        // identify the type of the command
-        if((targetString[0] == '/') && (targetString[0+1] == '/')){
-            // Identify comments by checking the first two characters of the string if it is "//"
-            target.commandType = COMMENT;
-            target.commandString = targetString.substr(2,targetString.length()-2);
-            
-        }else if ((targetString[0] == 'v') && (targetString[0+1] == 'a')&& (targetString[0+2] == 'r')){
-            // Identify variables by chacking for the word "var $"
-            target.commandType = VAR;
-            target.commandString = targetString.substr(4,targetString.length()-4);
-
-        }else if (targetString == "program") {
-            // identify program declaration by searching for "program"
-            target.commandType = DECLARATION;
-            target.commandString = targetString;
-
-        }else{
-            target.commandType = FUNCTION;
-            target.commandString = targetString;
-        }
-        // add generated command struct to the vector
-        parsedVector.push_back(target);   
-    }
-    
-    // combine comments
-    combineComments(parsedVector);
-
-    return parsedVector;
-}
-
-/** This function combines the comments in the vector of commends
- * @param commandVector : vector containing command structs. This is hte output of the rowIdentifier function. */
-void combineComments(std::vector<Command>& commandVector){
-    for (int i = 0; i < commandVector.size(); i++){
-        if ((commandVector[i].commandType == COMMENT) && (commandVector[i+1].commandType == COMMENT)){
-            commandVector[i+1].commandString  = commandVector[i].commandString + commandVector[i+1].commandString;
-            // erase the item after adding to the next item 
-            commandVector.erase(commandVector.begin()+i);
-        }
-    }
-}
 
 
 /** This function initializes the variable map in the Step class
