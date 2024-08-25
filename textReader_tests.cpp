@@ -4,8 +4,16 @@
 #define CATCH_CONFIG_MAIN
 #define CATCH_CONFIG_COLOUR_NONE
 #include "catch.hpp"
-#include "./classes/textReader.hpp"
+#include <iostream>
+#include <fstream>
+#include <exception>
+#include <set>
 #include "./functions/textParser.hpp"
+#include "./functions/variable_init.hpp"
+#include "./functions/combine_text.hpp"
+#include "./functions/network_init.hpp"
+#include "./functions/match_functions.hpp"
+#include "./functions/write_csv.tpp"
 
 // function prototype
 void getType(AeroScriptType);

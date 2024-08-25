@@ -231,17 +231,27 @@ CMakeFiles/test-textReader.dir/textReader_tests.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/c++/11/cstring \
  /usr/include/string.h /usr/include/strings.h \
- /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./classes/textReader.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/textParser.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/textParser.tpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/../classes/command.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/variable_init.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/variable_init.tpp \
  /usr/include/c++/11/stack /usr/include/c++/11/deque \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
  /usr/include/c++/11/bits/stl_stack.h \
- /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./classes/step.hpp \
- /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./classes/step.tpp \
- /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./classes/transition.hpp \
- /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./classes/transition.tpp \
- /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./classes/network.hpp \
- /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./classes/network.tpp \
- /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./classes/Command.hpp \
- /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/textParser.hpp \
- /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/textParser.tpp \
- /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/../classes/Command.hpp
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/../classes/step.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/../classes/step.tpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/../classes/step.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/combine_text.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/combine_text.tpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/network_init.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/network_init.tpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/../classes/network.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/../classes/transition.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/../classes/transition.tpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/../classes/network.tpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/../classes/network.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/../classes/transition.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/match_functions.hpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/match_functions.tpp \
+ /mnt/c/users/calvi/documents/EGR_Undergraduate\ Research/AeroScript\ State\ Machine\ Programming/AeroScript_SFC_Translator/./functions/write_csv.tpp

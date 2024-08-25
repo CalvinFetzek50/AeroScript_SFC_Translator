@@ -1,4 +1,4 @@
-#include "../classes/Command.hpp"
+#include "../classes/command.hpp"
 
 std::vector<std::string> rowParser(std::string sourceScript){
 

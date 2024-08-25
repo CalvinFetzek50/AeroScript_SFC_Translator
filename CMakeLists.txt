@@ -7,16 +7,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # some definitions
 set(SOURCE_MAIN main.cpp)
-set(SOURCE_TEXTREADER textReader.hpp)
+
+set(SOURCE_TEXTREADER ./functions/combine_text.hpp ./functions/combine_text.tpp ./functions/match_functions.hpp ./functions/match_functions.tpp 
+                        ./functions/network_init.hpp ./functions/network_init.tpp ./functions/textParser.hpp ./functions/textParser.tpp 
+                        ./functions/variable_init.hpp ./functions/variable_init.tpp ./functions/write_csv.tpp)
 set(SOURCE_TEXTREADER_TEST textReader_tests.cpp ${SOURCE_TEXTREADER})
 
-set(SOURCE_STEP step.hpp step.tpp)
+set(SOURCE_STEP ./classes/step.hpp ./classes/step.tpp)
 set(SOURCE_STEP_TEST step_tests.cpp ${SOURCE_STEP})
 
-set(SOURCE_TRANSITION transition.hpp transition.tpp)
+set(SOURCE_TRANSITION ./classes/transition.hpp ./classes/transition.tpp)
 set(SOURCE_TRANSITION_TEST transition_tests.cpp ${SOURCE_TRANSITION})
 
-set(SOURCE_NETWORK network.hpp network.tpp)
+set(SOURCE_NETWORK ./classes/network.hpp ./classes/network.tpp)
 set(SOURCE_NETWORK_TEST network_tests.cpp ${SOURCE_NETWORK})
 
 #create unittests
