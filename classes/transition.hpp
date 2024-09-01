@@ -24,7 +24,7 @@ class Transition{
 
         // original and target values to keep track of the transition, updated during transition
         std::string targetVariable;
-        Unit targetValue;
+        std::any targetValue;
 
         /** Method to set the current Step 
          * @param step an instance of the Step Class */

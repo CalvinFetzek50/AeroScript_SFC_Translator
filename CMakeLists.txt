@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(AeroScript_SFC_Translator)
 
-# require a C++11 compiler for all targets
-set(CMAKE_CXX_STANDARD 11)
+# require a C++17 compiler for all targets
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # some definitions
@@ -10,7 +10,7 @@ set(SOURCE_MAIN main.cpp)
 
 set(SOURCE_TEXTREADER ./functions/combine_text.hpp ./functions/combine_text.tpp ./functions/match_functions.hpp ./functions/match_functions.tpp 
                         ./functions/network_init.hpp ./functions/network_init.tpp ./functions/textParser.hpp ./functions/textParser.tpp 
-                        ./functions/variable_init.hpp ./functions/variable_init.tpp ./functions/write_csv.tpp)
+                        ./functions/variable_init.hpp ./functions/variable_init.tpp ./functions/write_csv.tpp ./functions/any_to_String.hpp)
 set(SOURCE_TEXTREADER_TEST textReader_tests.cpp ${SOURCE_TEXTREADER})
 
 set(SOURCE_STEP ./classes/step.hpp ./classes/step.tpp)

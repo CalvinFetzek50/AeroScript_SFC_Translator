@@ -33,7 +33,7 @@ void findAeroScriptFunction(const std::string functionStr, Transition<Unit>& tra
             }
         }
         targetVar = functionStr.substr(beginIdx,endIdx-beginIdx);
-        Unit value = transition.getCurrentStep().stepVariableMap[targetVar];
+        std::any value = transition.getCurrentStep().stepVariableMap[targetVar];
         transition.targetValue = value;
 
     } else if(functionStr.find("MoveLinear($") != std::string::npos){
@@ -48,7 +48,7 @@ void findAeroScriptFunction(const std::string functionStr, Transition<Unit>& tra
         beginIdx = nthOccurrence(functionStr,"$",2);
         endIdx = nthOccurrence(functionStr,",",2);
         targetVar = functionStr.substr(beginIdx,endIdx-beginIdx);
-        Unit value = transition.getCurrentStep().stepVariableMap[targetVar];
+        std::any value = transition.getCurrentStep().stepVariableMap[targetVar];
         transition.targetValue = value;
 
     }else{

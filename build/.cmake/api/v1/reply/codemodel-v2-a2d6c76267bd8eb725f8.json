@@ -47,35 +47,35 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "main-textReader::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-main-textReader-Debug-e93a47e284b638c43cad.json",
+					"jsonFile" : "target-main-textReader-Debug-6aa92eade83b6767a401.json",
 					"name" : "main-textReader",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test-Step::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test-Step-Debug-57c153d1815a783fd114.json",
+					"jsonFile" : "target-test-Step-Debug-e8f26aae3e7209ebaadf.json",
 					"name" : "test-Step",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test-network::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test-network-Debug-686ce7f7068bf27cfcd5.json",
+					"jsonFile" : "target-test-network-Debug-43285071f2f04b8d01cb.json",
 					"name" : "test-network",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test-textReader::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test-textReader-Debug-e2e79a5ea3025956d4a1.json",
+					"jsonFile" : "target-test-textReader-Debug-2bae4f581cb284d7c215.json",
 					"name" : "test-textReader",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test-transition::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test-transition-Debug-1b66cab4679d946f491d.json",
+					"jsonFile" : "target-test-transition-Debug-c5ea9d66ff18ae9b60c6.json",
 					"name" : "test-transition",
 					"projectIndex" : 0
 				}
