@@ -1,1 +1,0 @@
-/usr/bin/c++ -g "CMakeFiles/test-textParser.dir/textParser_tests.cpp.o" -o test-textParser
