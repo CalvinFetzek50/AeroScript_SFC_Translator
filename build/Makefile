@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/1409/bin/cmake
+CMAKE_COMMAND = /snap/cmake/1413/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/1409/bin/cmake -E rm -f
+RM = /snap/cmake/1413/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = "/mnt/c/users/calvi/documents/EGR_Undergraduate Research/Aero
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/snap/cmake/1409/bin/ctest --force-new-ctest-process $(ARGS)
+	/snap/cmake/1413/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/snap/cmake/1409/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/1413/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -179,6 +179,19 @@ test-network/fast:
 .PHONY : test-network/fast
 
 #=============================================================================
+# Target rules for targets named test-textParser
+
+# Build rule for target.
+test-textParser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-textParser
+.PHONY : test-textParser
+
+# fast build rule for target.
+test-textParser/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-textParser.dir/build.make CMakeFiles/test-textParser.dir/build
+.PHONY : test-textParser/fast
+
+#=============================================================================
 # Target rules for targets named main-textReader
 
 # Build rule for target.
@@ -263,6 +276,30 @@ step_tests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-Step.dir/build.make CMakeFiles/test-Step.dir/step_tests.cpp.s
 .PHONY : step_tests.cpp.s
 
+textParser_tests.o: textParser_tests.cpp.o
+.PHONY : textParser_tests.o
+
+# target to build an object file
+textParser_tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-textParser.dir/build.make CMakeFiles/test-textParser.dir/textParser_tests.cpp.o
+.PHONY : textParser_tests.cpp.o
+
+textParser_tests.i: textParser_tests.cpp.i
+.PHONY : textParser_tests.i
+
+# target to preprocess a source file
+textParser_tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-textParser.dir/build.make CMakeFiles/test-textParser.dir/textParser_tests.cpp.i
+.PHONY : textParser_tests.cpp.i
+
+textParser_tests.s: textParser_tests.cpp.s
+.PHONY : textParser_tests.s
+
+# target to generate assembly for a file
+textParser_tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-textParser.dir/build.make CMakeFiles/test-textParser.dir/textParser_tests.cpp.s
+.PHONY : textParser_tests.cpp.s
+
 textReader_tests.o: textReader_tests.cpp.o
 .PHONY : textReader_tests.o
 
@@ -323,6 +360,7 @@ help:
 	@echo "... main-textReader"
 	@echo "... test-Step"
 	@echo "... test-network"
+	@echo "... test-textParser"
 	@echo "... test-textReader"
 	@echo "... test-transition"
 	@echo "... main.o"
@@ -334,6 +372,9 @@ help:
 	@echo "... step_tests.o"
 	@echo "... step_tests.i"
 	@echo "... step_tests.s"
+	@echo "... textParser_tests.o"
+	@echo "... textParser_tests.i"
+	@echo "... textParser_tests.s"
 	@echo "... textReader_tests.o"
 	@echo "... textReader_tests.i"
 	@echo "... textReader_tests.s"

@@ -1,6 +1,7 @@
 
 #include <string>
 #include "../classes/network.hpp"
+#include "any_to_String.hpp"
 
 /** function to write the network onto a csv file
  * @param filename filename of the output file as std::string
@@ -36,7 +37,7 @@ void write_csv(std::string filename, Network<Unit> network){
         
         // add transtions
         myFile << "|" << ",";
-        myFile << currentNode.transition.targetVariable + " = " + currentNode.transition.targetValue;
+        myFile << currentNode.transition.targetVariable + " = " + any_to_string(currentNode.transition.targetValue);
         myFile << "\n";
 
     }

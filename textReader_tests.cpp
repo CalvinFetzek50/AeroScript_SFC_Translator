@@ -15,8 +15,7 @@
 #include "./functions/match_functions.hpp"
 #include "./functions/write_csv.tpp"
 
-// function prototype
-void getType(AeroScriptType);
+
 
 TEST_CASE("test textReader method","[textReader]"){
 
@@ -73,27 +72,3 @@ TEST_CASE("test textReader method","[textReader]"){
     write_csv("../Output/Output_ControlFlow.csv", testNetwork);
 
 }
-
-
-/* helper function for debugging */
-
-// VAR = 0, IF = 1, FOR = 2, COMMENT =3, OTHER = 4
-void getType(AeroScriptType x){
-    switch (x){
-        case VAR:
-            std::cout << "VAR";
-            break;
-        case IF:
-            std::cout <<"IF";
-            break;
-        case COMMENT:
-            std::cout <<"COMMENT";
-            break;
-        case DECLARATION:
-            std::cout <<"DECLARATION";
-            break;
-        default:
-            std::cout <<"FUNCTION";
-            break;
-    }
-};

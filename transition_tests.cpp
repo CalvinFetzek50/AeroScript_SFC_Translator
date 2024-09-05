@@ -4,6 +4,7 @@
 #define CATCH_CONFIG_COLOUR_NONE
 #include "catch.hpp"
 #include "./classes/transition.hpp"
+#include "./functions/any_to_String.hpp"
 
 TEST_CASE(" Test get and set Step methods", "[Transition class]"){
     
@@ -19,8 +20,8 @@ TEST_CASE(" Test get and set Step methods", "[Transition class]"){
     trans.setCurrentStep(testStep1);
     trans.setNextStep(testStep2);
 
-    REQUIRE(trans.getCurrentStep().stepVariableMap["temp"] == 10);
-    REQUIRE(trans.getNextStep().stepVariableMap["temp"] == 50);
+    REQUIRE(any_to_string(trans.getCurrentStep().stepVariableMap["temp"]) == "10");
+    REQUIRE(any_to_string(trans.getNextStep().stepVariableMap["temp"]) == "50");
 
 
 }

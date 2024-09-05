@@ -25,12 +25,35 @@ bool initializeVariables(std::vector<Command>& commandVector, Step<Unit>& step){
             }
             // get variable name
             std::string variableName = command.commandString.substr(firstIdx,lastIdx-firstIdx);
+
+            // get initial value type
+            int firstTypeIdx = command.commandString.find(" as ") + 4;
+            int lastTypeIdx = 0;
+            for (int i = firstTypeIdx; i < command.commandString.length();i++){
+                if (std::isspace(command.commandString[i])){
+                    lastTypeIdx = i;
+                    break;
+                }
+            }
+
+            std::string typeStr = command.commandString.substr(firstTypeIdx,lastTypeIdx-firstTypeIdx);
             
             // add to set containing all variable names
             step.namesSet.insert(variableName);
 
-            // initialize variables with nothing at first
-            step.addVariable(variableName,"");
+            // initialize variables 
+            // when variable is not an array
+            if (typeStr == "integer"){
+                step.addVariable(variableName,0);    
+            }else if (typeStr == "string"){
+                step.addVariable(variableName,"");
+            }else{
+                // default : initialize variable as empty string
+                step.addVariable(variableName,"");
+            }
+            
+            // when variable is array
+            
         }
     }
 
@@ -83,7 +106,7 @@ bool initializeVariables(std::vector<Command>& commandVector, Step<Unit>& step){
                 // store values as string 
                 step.updateVariable(name,valueStr);
 
-                // if the variable was initialized, store the index of the function into the stack
+                // if the variable was initialized, store the row index of the function into the stack
                 initStack.push(idx);
             }
 

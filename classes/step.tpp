@@ -34,7 +34,7 @@ void Step<Unit>::setComment(std::string comment){
 }
 
 template<typename Unit>
-bool Step<Unit>::updateVariable(std::string variableName, Unit value){
+bool Step<Unit>::updateVariable(std::string variableName, std::any value){
     // get the corresponding key from the map and update the variable
     bool exists = false;
 
@@ -57,7 +57,7 @@ bool Step<Unit>::updateVariable(std::string variableName, Unit value){
 }
 
 template<typename Unit>
-bool Step<Unit>::addVariable(std::string variableName, Unit value){
+bool Step<Unit>::addVariable(std::string variableName, std::any value){
         if (stepVariableMap.find(variableName) == stepVariableMap.end()){
             // if the element is not found in the map, add to map
             stepVariableMap[variableName] = value;
@@ -82,8 +82,8 @@ bool Step<Unit>::addVariable(std::string variableName, Unit value){
 template<typename Unit>
 bool Step<Unit>::copyMap(Step<Unit> step){
 
-    std::map<std::string, Unit> targetMap = step.stepVariableMap;
-    std::map<std::string, Unit> originalMap = stepVariableMap;
+    std::map<std::string, std::any> targetMap = step.stepVariableMap;
+    std::map<std::string, std::any> originalMap = stepVariableMap;
 
     bool check;
     int checkCount = 0;
