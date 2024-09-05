@@ -179,6 +179,19 @@ test-network/fast:
 .PHONY : test-network/fast
 
 #=============================================================================
+# Target rules for targets named test-textParser
+
+# Build rule for target.
+test-textParser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-textParser
+.PHONY : test-textParser
+
+# fast build rule for target.
+test-textParser/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-textParser.dir/build.make CMakeFiles/test-textParser.dir/build
+.PHONY : test-textParser/fast
+
+#=============================================================================
 # Target rules for targets named main-textReader
 
 # Build rule for target.
@@ -263,6 +276,30 @@ step_tests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-Step.dir/build.make CMakeFiles/test-Step.dir/step_tests.cpp.s
 .PHONY : step_tests.cpp.s
 
+textParser_tests.o: textParser_tests.cpp.o
+.PHONY : textParser_tests.o
+
+# target to build an object file
+textParser_tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-textParser.dir/build.make CMakeFiles/test-textParser.dir/textParser_tests.cpp.o
+.PHONY : textParser_tests.cpp.o
+
+textParser_tests.i: textParser_tests.cpp.i
+.PHONY : textParser_tests.i
+
+# target to preprocess a source file
+textParser_tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-textParser.dir/build.make CMakeFiles/test-textParser.dir/textParser_tests.cpp.i
+.PHONY : textParser_tests.cpp.i
+
+textParser_tests.s: textParser_tests.cpp.s
+.PHONY : textParser_tests.s
+
+# target to generate assembly for a file
+textParser_tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-textParser.dir/build.make CMakeFiles/test-textParser.dir/textParser_tests.cpp.s
+.PHONY : textParser_tests.cpp.s
+
 textReader_tests.o: textReader_tests.cpp.o
 .PHONY : textReader_tests.o
 
@@ -323,6 +360,7 @@ help:
 	@echo "... main-textReader"
 	@echo "... test-Step"
 	@echo "... test-network"
+	@echo "... test-textParser"
 	@echo "... test-textReader"
 	@echo "... test-transition"
 	@echo "... main.o"
@@ -334,6 +372,9 @@ help:
 	@echo "... step_tests.o"
 	@echo "... step_tests.i"
 	@echo "... step_tests.s"
+	@echo "... textParser_tests.o"
+	@echo "... textParser_tests.i"
+	@echo "... textParser_tests.s"
 	@echo "... textReader_tests.o"
 	@echo "... textReader_tests.i"
 	@echo "... textReader_tests.s"
