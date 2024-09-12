@@ -4,11 +4,16 @@
 
 #include "variable_init.tpp"
 
-/** This function initializes the variable map in the Step class
+/** This function finds all variables names in the script and adds them to the variable map in the Step class
  * @param commandVector : a vector containing Command structs. This is the output of the rowIdentifier function
- * @param step : the initialized step class which contains all the variables used in the script.
- * @return returns true, if all variables have been added to the Step class, else returns false. */
+ * @param step : the initialized step class which contains all the variables used in the script. */
 template <typename Unit>
-bool initializeVariables(std::vector<Command>& commandVector, Step<Unit>& step);
+void findVariables(std::vector<Command>& commandVector, Step<Unit>& step);
+
+/**  This function initializes all variables in the variable map
+ * @param commandVector : a vector containing Command structs. Output after findVariables function.
+ * @param step : the initialized step class which contains all the variables used in the script.*/
+template <typename Unit>
+void initializeVariables(std::vector<Command>& commandVector, Step<Unit>& step);
 
 #endif 

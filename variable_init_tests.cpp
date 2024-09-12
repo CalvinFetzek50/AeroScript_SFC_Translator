@@ -10,14 +10,10 @@
 #include <set>
 #include "./functions/textParser.hpp"
 #include "./functions/variable_init.hpp"
-#include "./functions/combine_text.hpp"
-#include "./functions/network_init.hpp"
-#include "./functions/match_functions.hpp"
-#include "./functions/write_csv.tpp"
 
 
 
-TEST_CASE("test textReader method","[textReader]"){
+TEST_CASE("test variable initialization methods","[variable_init]"){
 
     /* tested in testParser_tests.cpp */
     // read AeroScript Source code into a single string
@@ -51,33 +47,8 @@ TEST_CASE("test textReader method","[textReader]"){
     Step<std::string> initStep;
     findVariables(commandVector,initStep);
 
+    // check if the array is incorporated correctly
+    REQUIRE(initStep.stepVariableMap["$intArray"].size() == 10);
 
-    // combine for loops
-    combineForLoops(commandVector,initStep);
-    
-    /*
-    // combine while loops
-    combineWhileLoops(commandVector,initStep);
-
-    // create the network of nodes consisting of steps and transitions
-    Network<std::string> testNetwork;
-    REQUIRE(createNetwork(commandVector, initStep,testNetwork));
-
-    
-    for (int i = 0; i < testNetwork.getSize();i++){
-
-        Node<std::string> node = testNetwork.getNode(i);
-        
-        std::cout << "Name: " <<node.step.getName() << std::endl;
-        std::cout << "Comment: " << node.step.getComment() << std::endl;
-        std::cout << "function: " <<node.transition.getFunction() << std::endl;
-        std::cout << "****************" << std::endl;
-         
-    }
-
-    // write output to CSV
-    write_csv("../Output/Output_ControlFlow.csv", testNetwork);
-
-    */
 
 }

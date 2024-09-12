@@ -9,8 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SOURCE_MAIN main.cpp)
 
 set(SOURCE_TEXTREADER ./functions/combine_text.hpp ./functions/combine_text.tpp ./functions/match_functions.hpp ./functions/match_functions.tpp 
-                        ./functions/network_init.hpp ./functions/network_init.tpp  
-                        ./functions/variable_init.hpp ./functions/variable_init.tpp ./functions/write_csv.tpp ./functions/any_to_String.hpp)
+                        ./functions/network_init.hpp ./functions/network_init.tpp  ./functions/write_csv.tpp ./functions/any_to_String.hpp)
 set(SOURCE_TEXTREADER_TEST textReader_tests.cpp ${SOURCE_TEXTREADER})
 
 set(SOURCE_STEP ./classes/step.hpp ./classes/step.tpp)
@@ -23,7 +22,10 @@ set(SOURCE_NETWORK ./classes/network.hpp ./classes/network.tpp)
 set(SOURCE_NETWORK_TEST network_tests.cpp ${SOURCE_NETWORK})
 
 set(SOURCE_TEXTPARSER ./functions/textParser.hpp ./functions/textParser.tpp)
-set(SOURCE_TEXTPARSER_TEST textParser_tests.cpp ${TEXTPARSER})
+set(SOURCE_TEXTPARSER_TEST textParser_tests.cpp ${SOURCE_TEXTPARSER})
+
+set(SOURCE_VARIABLE_INIT ./functions/variable_init.hpp ./functions/variable_init.tpp)
+set(SOURCE_VARIABLE_INIT_TEST variable_init_tests.cpp ${SOURCE_VARIABLE_INIT})
 
 #create unittests
 add_executable(test-textReader catch.hpp ${SOURCE_TEXTREADER_TEST})
@@ -31,6 +33,7 @@ add_executable(test-Step catch.hpp ${SOURCE_STEP_TEST})
 add_executable(test-transition catch.hpp ${SOURCE_TRANSITION_TEST})
 add_executable(test-network catch.hpp ${SOURCE_NETWORK_TEST})
 add_executable(test-textParser catch.hpp ${SOURCE_TEXTPARSER_TEST})
+add_executable(test-variableInit catch.hpp ${SOURCE_VARIABLE_INIT_TEST})
 
 enable_testing()
 
@@ -40,6 +43,7 @@ add_test(test-Step test-Step)
 add_test(test-transition test-transition)
 add_test(test-network test-network)
 add_test(test-textParser test-textParser)
+add_test(test-variableInit test-variableInit)
 
 # add a main executable
 add_executable(main-textReader ${SOURCE_MAIN})

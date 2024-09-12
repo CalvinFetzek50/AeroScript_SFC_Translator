@@ -24,7 +24,7 @@ class Step{
     public:
 
         // dictionary to store key: variable name, value: variable value 
-        std::map<std::string, std::any> stepVariableMap; 
+        std::map<std::string, std::vector<std::any>> stepVariableMap; 
 
         // set to store all variable names
         std::set<std::string> namesSet;
@@ -55,16 +55,17 @@ class Step{
 
         /** method to update the value of the variables 
          * @param variableName : a string for the target variable
-         * @param value : the value associated with the variable name
+         * @param value : pointer to value associated with the variable name 
          * @return returns true after directly updating the variableMap used as argument. 
          * Returns false, if it cannot update the variable value (if variable does not exist)  */
         bool updateVariable(std::string variableName, std::any value);
 
         /** method to add variables to the variable map
          * @param variableName : string of the variable name
-         * @param value : initial value of the variable
+         * @param value : pointer to value of the variable
+         * @param isArray : boolean, true if variable is an array, false if variable is not array
          * @return returns true, if variable has been added. */
-        bool addVariable(std::string variableName, std::any value);
+        bool addVariable(std::string variableName, std::any value, bool isArray);
 
         /** method to copy the map containing all variables from another Step class  
          * @param step : step class intance where the map is to be copied over from.

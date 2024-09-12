@@ -1,5 +1,5 @@
 #include "step.hpp"
-
+#include "../functions/any_to_String.hpp"
 #include <exception>
 
 template<typename Unit>
@@ -36,37 +36,51 @@ void Step<Unit>::setComment(std::string comment){
 template<typename Unit>
 bool Step<Unit>::updateVariable(std::string variableName, std::any value){
     // get the corresponding key from the map and update the variable
-    bool exists = false;
-
     if (stepVariableMap.find(variableName) == stepVariableMap.end()){
         // if element is not found in the map, return false.
+
         /* debug */
         std::cout << variableName << " Variable does not exist and cannot be updated. " << std::endl;
         /* debug */
+
         return false;
     }else{
-        stepVariableMap[variableName] = value;
+        if (stepVariableMap[variableName].empty()){
+            // if variable value is an empty vector add to vector
+            stepVariableMap[variableName].push_back(value);
+        }else{
+            // if variable value is not empty, remove last element and add new element
+            stepVariableMap[variableName].pop_back();
+            stepVariableMap[variableName].push_back(value);
+        }
+    }
+        
         
         /* debug */
-        // std::cout << variableName << " is updated to: " << value << std::endl;
+        std::cout << variableName << " is updated to: " << any_to_string(value) << std::endl;
         /* debug */
 
         return true;
-    }
     
 }
 
 template<typename Unit>
-bool Step<Unit>::addVariable(std::string variableName, std::any value){
-        if (stepVariableMap.find(variableName) == stepVariableMap.end()){
+bool Step<Unit>::addVariable(std::string variableName, std::any value, bool isArray){
+        if ((stepVariableMap.find(variableName) == stepVariableMap.end())&&(!isArray)){
             // if the element is not found in the map, add to map
-            stepVariableMap[variableName] = value;
+            stepVariableMap[variableName].push_back(value);
 
             /* debug */
             // std::cout << variableName << " is set to: " << value << std::endl;
             /* debug */
 
             return true;    
+        }else if (isArray){
+            // if the element is part of an array, add to array
+            stepVariableMap[variableName].push_back(value);
+
+            return true;
+            
         }else{
             // if element is duplicating, do nothing and return false
 
@@ -82,8 +96,8 @@ bool Step<Unit>::addVariable(std::string variableName, std::any value){
 template<typename Unit>
 bool Step<Unit>::copyMap(Step<Unit> step){
 
-    std::map<std::string, std::any> targetMap = step.stepVariableMap;
-    std::map<std::string, std::any> originalMap = stepVariableMap;
+    std::map<std::string, std::vector<std::any>> targetMap = step.stepVariableMap;
+    std::map<std::string, std::vector<std::any>> originalMap = stepVariableMap;
 
     bool check;
     int checkCount = 0;
